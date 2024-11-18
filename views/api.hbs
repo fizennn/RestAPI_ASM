@@ -99,7 +99,7 @@
 
 
             // Gửi dữ liệu lên API bằng Fetch API
-            fetch("https://jealous-koressa-fizennn-1a21a2fd.koyeb.app/api/addCar", {
+            fetch("/api/addCar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -124,7 +124,7 @@
             const tableBody = document.getElementById("tableBody");
             const loading = document.getElementById("loading");
 
-            fetch("https://jealous-koressa-fizennn-1a21a2fd.koyeb.app/api/getAllCars", {
+            fetch("/api/getAllCars", {
                 method: "GET",
             })
             .then((response) => response.json())
@@ -169,7 +169,7 @@
 
         function deleteCar(maXe) {
             if (confirm("Bạn có chắc chắn muốn xóa xe này không?")) {
-                fetch(`https://jealous-koressa-fizennn-1a21a2fd.koyeb.app/api/deleteCar/${maXe}`, {
+                fetch(`/api/deleteCar/${maXe}`, {
                     method: "DELETE",
                 })
                 .then((response) => response.json())
@@ -217,7 +217,7 @@
             };
 
             // Thực hiện fetch với phương thức PUT và đường dẫn chứa id
-            fetch(`https://jealous-koressa-fizennn-1a21a2fd.koyeb.app/api/updateCar/${id}`, {
+            fetch(`/api/updateCar/${id}`, {
                 method: "PUT", // Hoặc "PATCH" tùy theo API của bạn
                 headers: {
                     "Content-Type": "application/json",
