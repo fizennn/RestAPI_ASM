@@ -8,15 +8,9 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/getAllCars", async (req, res) => {
-  const page = parseInt(req.query.page, 10) || 1; // Chuyển page sang số nguyên
-  const limit = parseInt(req.query.limit, 10) || 3; // Chuyển limit sang số nguyên
-
-  const skip = (page - 1) * limit;
-
   try {
     const data = await Cars.find({}) // Lấy dữ liệu từ MongoDB
-      .skip(skip) // Bỏ qua số bản ghi theo `skip`
-      .limit(limit); // Giới hạn số bản ghi trả về
+      // Giới hạn số bản ghi trả về
 
     res.json({
       status: 200,
